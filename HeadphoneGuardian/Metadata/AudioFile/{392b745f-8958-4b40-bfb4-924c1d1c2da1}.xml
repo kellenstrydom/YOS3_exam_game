@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{392b745f-8958-4b40-bfb4-924c1d1c2da1}">
+		<property name="assetPath">
+			<value>tv-glitch-6245.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>7.4160000000000004</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e35596dc-6001-4be4-a4a0-2339ee172c02}</destination>
+		</relationship>
+	</object>
+</objects>

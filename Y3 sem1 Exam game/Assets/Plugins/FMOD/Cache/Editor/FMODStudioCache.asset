@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7084442874204262291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../HeadphoneGuardian/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638517590969761317
+  FileSizes:
+  - Name: Desktop
+    Value: 962
+  Exists: 1
+--- !u!114 &-7045621541576598916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../HeadphoneGuardian/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638517590969761317
+  FileSizes:
+  - Name: Desktop
+    Value: 251488
+  Exists: 1
+--- !u!114 &-1340223929678858137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/cinematic-documentary
+  m_EditorClassIdentifier: 
+  Path: event:/cinematic-documentary
+  Guid:
+    Data1: 26348446
+    Data2: 1240294309
+    Data3: 886181530
+    Data4: 1439623167
+  Banks:
+  - {fileID: 5349248923148030876}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 131761
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -7084442874204262291}
+  - {fileID: -7045621541576598916}
+  - {fileID: 5349248923148030876}
+  EditorEvents:
+  - {fileID: 2895895367997551768}
+  - {fileID: -1340223929678858137}
+  - {fileID: 4041029936234100840}
+  - {fileID: 7208248015668387182}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -7045621541576598916}
+  StringsBanks:
+  - {fileID: -7084442874204262291}
+  cacheTime: 638517590970052127
+  cacheVersion: 131618
+--- !u!114 &2895895367997551768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/static-noise
+  m_EditorClassIdentifier: 
+  Path: event:/static-noise
+  Guid:
+    Data1: -1591694310
+    Data2: 1334814022
+    Data3: -2138035045
+    Data4: 1947693536
+  Banks:
+  - {fileID: -7045621541576598916}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 28656
+--- !u!114 &4041029936234100840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/playing-in-color
+  m_EditorClassIdentifier: 
+  Path: event:/playing-in-color
+  Guid:
+    Data1: 1812452548
+    Data2: 1190438892
+    Data3: -271046723
+    Data4: -173420970
+  Banks:
+  - {fileID: 5349248923148030876}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 82782
+--- !u!114 &5349248923148030876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/songs.bank
+  m_EditorClassIdentifier: 
+  Path: ../HeadphoneGuardian/Build/Desktop/songs.bank
+  Name: songs
+  StudioPath: bank:/songs
+  lastModified: 638517590970052127
+  FileSizes:
+  - Name: Desktop
+    Value: 4804032
+  Exists: 1
+--- !u!114 &7208248015668387182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/good-night
+  m_EditorClassIdentifier: 
+  Path: event:/good-night
+  Guid:
+    Data1: -19066389
+    Data2: 1334860215
+    Data3: 170008713
+    Data4: 129789159
+  Banks:
+  - {fileID: 5349248923148030876}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 147121

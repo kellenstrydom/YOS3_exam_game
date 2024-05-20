@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{315e5854-d05e-43a7-b877-86139b590c5f}">
+		<property name="assetPath">
+			<value>good-night-160166.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>147.12163265306123</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e35596dc-6001-4be4-a4a0-2339ee172c02}</destination>
+		</relationship>
+	</object>
+</objects>
