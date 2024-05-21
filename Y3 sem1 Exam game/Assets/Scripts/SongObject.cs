@@ -11,4 +11,5 @@ public class SongObject : ScriptableObject
     public string title;
     public IpodInformation.Genre genre;
     public string path;
+    public float songLength;
 }

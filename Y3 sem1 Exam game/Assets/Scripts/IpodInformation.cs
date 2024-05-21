@@ -25,9 +25,16 @@ public class IpodInformation : MonoBehaviour
     [Header("Song Data")]
     [SerializeField]
     private List<SongObject> songQueue = new List<SongObject>();
-
     [SerializeField]
-    private SongObject currentSong;
+    public SongObject currentSong;
+
+    public float songTimer;
+    
+    
+    
+    
+    // flags and trackers
+    private Coroutine songTimerCoroutine;
 
     private void Start()
     {
@@ -41,15 +48,31 @@ public class IpodInformation : MonoBehaviour
     }
 
 
-    void PlayNextSong()
+    public void PlayNextSong()
     {
         if (currentSong != null)
         {
+            StopCoroutine(songTimerCoroutine);
             songQueue.Add(currentSong);
         }
         currentSong = songQueue[0];
         songQueue.Remove(currentSong);
         _SoundManager.PlaySong(currentSong.path);
-        
+
+        songTimerCoroutine = StartCoroutine(SongTimer(currentSong.songLength));
     }
+
+    IEnumerator SongTimer(float songLength)
+    {
+        songTimer = 0;
+        while (songTimer < songLength)
+        {
+            yield return new WaitForEndOfFrame();
+            songTimer += Time.deltaTime;
+        }
+        
+        
+        PlayNextSong();
+    }
+
 }

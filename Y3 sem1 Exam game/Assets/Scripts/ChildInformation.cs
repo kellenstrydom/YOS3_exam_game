@@ -19,11 +19,11 @@ public class ChildInformation : MonoBehaviour
     [Header("Child Stats")] 
     [SerializeField]
     [Range(0, 100f)]
-    private float stressLevel;
+    public float stressLevel;
     
     [Header("UI")]
     [SerializeField]
-    TMP_Text stressText;
+    private HUDController _hud;
 
     public Material childMaterial;
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class ChildInformation : MonoBehaviour
 
     void CheckStressLevel()
     {
-        stressText.text = $"Stress: {stressLevel}";
+        //_hud.DisplayStress();
         float t = stressLevel / 100f;
 
         childMaterial.color = Color.Lerp(Color.white, Color.black, t);
@@ -105,4 +105,6 @@ public class ChildInformation : MonoBehaviour
     {
         return Vector3.Distance(transform.position, targetSound.transform.position);
     }
+
+   
 }

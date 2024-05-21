@@ -15,3 +15,4 @@ MonoBehaviour:
   title: Cinematic Documentary
   genre: 2
   path: event:/cinematic-documentary
+  songLength: 5
