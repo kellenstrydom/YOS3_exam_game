@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: ../HeadphoneGuardian/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638517590969761317
+  lastModified: 638520154528715564
   FileSizes:
   - Name: Desktop
-    Value: 962
+    Value: 1384
   Exists: 1
+--- !u!114 &-7080054310819568676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/car-horns-in-street
+  m_EditorClassIdentifier: 
+  Path: event:/car-horns-in-street
+  Guid:
+    Data1: 11155794
+    Data2: 1215388779
+    Data3: -1684171611
+    Data4: -648569138
+  Banks:
+  - {fileID: -7045621541576598916}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 75792
 --- !u!114 &-7045621541576598916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,10 +62,10 @@ MonoBehaviour:
   Path: ../HeadphoneGuardian/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638517590969761317
+  lastModified: 638520154528705506
   FileSizes:
   - Name: Desktop
-    Value: 251488
+    Value: 2001312
   Exists: 1
 --- !u!114 &-1340223929678858137
 MonoBehaviour:
@@ -67,6 +94,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 131761
+--- !u!114 &-466696619285900353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/car-alarm-siren
+  m_EditorClassIdentifier: 
+  Path: event:/car-alarm-siren
+  Guid:
+    Data1: -822486764
+    Data2: 1189022798
+    Data3: -1916094540
+    Data4: -1072271183
+  Banks:
+  - {fileID: -7045621541576598916}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 39696
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,12 +142,15 @@ MonoBehaviour:
   - {fileID: -1340223929678858137}
   - {fileID: 4041029936234100840}
   - {fileID: 7208248015668387182}
+  - {fileID: -466696619285900353}
+  - {fileID: -7080054310819568676}
+  - {fileID: 5627725617187259374}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7045621541576598916}
   StringsBanks:
   - {fileID: -7084442874204262291}
-  cacheTime: 638517590970052127
+  cacheTime: 638520154528715564
   cacheVersion: 131618
 --- !u!114 &2895895367997551768
 MonoBehaviour:
@@ -164,11 +221,38 @@ MonoBehaviour:
   Path: ../HeadphoneGuardian/Build/Desktop/songs.bank
   Name: songs
   StudioPath: bank:/songs
-  lastModified: 638517590970052127
+  lastModified: 638520136937578662
   FileSizes:
   - Name: Desktop
     Value: 4804032
   Exists: 1
+--- !u!114 &5627725617187259374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/police-operation-siren
+  m_EditorClassIdentifier: 
+  Path: event:/police-operation-siren
+  Guid:
+    Data1: 557076175
+    Data2: 1083085205
+    Data3: 810619525
+    Data4: 1882908582
+  Banks:
+  - {fileID: -7045621541576598916}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16032
 --- !u!114 &7208248015668387182
 MonoBehaviour:
   m_ObjectHideFlags: 0

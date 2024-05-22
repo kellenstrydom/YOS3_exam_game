@@ -15,4 +15,5 @@ MonoBehaviour:
   title: Cinematic Documentary
   genre: 2
   path: event:/cinematic-documentary
-  songLength: 5
+  songLength: 132
+  color: {r: 0.23708694, g: 1, b: 0.2117647, a: 1}

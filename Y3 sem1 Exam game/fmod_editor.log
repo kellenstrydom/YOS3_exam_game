@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000001A9E468BE48 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000015FB2F3F988 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -20,190 +20,99 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9E4BCD468, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9E4BCD468
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015CD03AE788, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015CD03AE788
 [LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
 [LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
 [LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A768FD2E20
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='good-night-160166', format=5, channels=2, frequency=48000, lengthbytes=1871744, lengthpcm=7061838, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9E4BCD468
-[LOG] SoundI::release                          : cinematic-documentary-115669 (000001A764A06C88)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A9024A0708)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A9018ABB98)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A900877C48, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A900877C48
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A7664BBBC0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000015F8070FBF0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='playing-in-color-120336', format=5, channels=2, frequency=48000, lengthbytes=1044992, lengthpcm=3973537, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.846802.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A900877C48
-[LOG] SoundI::release                          : good-night-160166 (000001A9E4BCD468)
-[LOG] SoundI::release                          :     good-night-160166 (000001A9D9582908)
-[LOG] SoundI::release                          :     good-night-160166 (000001A902D93018)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015CD03AE788
+[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9008778E8, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9008778E8
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015FB3808918, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015FB3808918
+[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1994816
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6496
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A7664BBA80
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000015EA3D638A0
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='cinematic-documentary-115669', format=5, channels=2, frequency=48000, lengthbytes=1880736, lengthpcm=6324558, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9008778E8
-[LOG] SoundI::release                          : playing-in-color-120336 (000001A900877C48)
-[LOG] SoundI::release                          :     playing-in-color-120336 (000001A764C9ACB8)
-[LOG] SoundI::release                          :     playing-in-color-120336 (000001A9018ACF78)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='static-noise-194184', format=5, channels=1, frequency=48000, lengthbytes=248928, lengthpcm=1375503, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.138153.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015FB3808918
+[LOG] SoundI::release                          : static-noise-194184 (0000015FB5054768)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015CD5D6B098)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015F55FE4758)
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015F575832C8, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015F575832C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015F575832C8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015F4B2D7F18, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015F4B2D7F18
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015F4B2D7F18
+[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A900877738, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A900877738
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015FB3808258, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015FB3808258
+[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1994816
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6496
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A7664BB940
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000015EA3D62C20
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='good-night-160166', format=5, channels=2, frequency=48000, lengthbytes=1871744, lengthpcm=7061838, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A900877738
-[LOG] SoundI::release                          : cinematic-documentary-115669 (000001A9008778E8)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A764C99C78)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A9018AC8B8)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='static-noise-194184', format=5, channels=1, frequency=48000, lengthbytes=248928, lengthpcm=1375503, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.138153.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015FB3808258
+[LOG] SoundI::release                          : static-noise-194184 (0000015FB3808918)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015CD499F3B8)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015F4B2D7F18)
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015F575832C8, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015F575832C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015F575832C8
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015F4B2D7BB8, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015F4B2D7BB8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015F4B2D7BB8
+[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/Master.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9E7120AC8, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9E7120AC8
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015F6D7E6418, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015F6D7E6418
+[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/Master.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1994816
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 6496
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A9D957A220
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000015CD3C7C840
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='playing-in-color-120336', format=5, channels=2, frequency=48000, lengthbytes=1044992, lengthpcm=3973537, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.846802.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9E7120AC8
-[LOG] SoundI::release                          : good-night-160166 (000001A900877738)
-[LOG] SoundI::release                          :     good-night-160166 (000001A764C99FB8)
-[LOG] SoundI::release                          :     good-night-160166 (000001A9018AC558)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9E7120918, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9E7120918
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A9D957A0E0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='cinematic-documentary-115669', format=5, channels=2, frequency=48000, lengthbytes=1880736, lengthpcm=6324558, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9E7120918
-[LOG] SoundI::release                          : playing-in-color-120336 (000001A9E7120AC8)
-[LOG] SoundI::release                          :     playing-in-color-120336 (000001A764C99E18)
-[LOG] SoundI::release                          :     playing-in-color-120336 (000001A9018AC8B8)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9E7120E28, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9E7120E28
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A9D957A220
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='good-night-160166', format=5, channels=2, frequency=48000, lengthbytes=1871744, lengthpcm=7061838, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9E7120E28
-[LOG] SoundI::release                          : cinematic-documentary-115669 (000001A9E7120918)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A764C9B678)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A9018ACF78)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9E7120258, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9E7120258
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A9D9579FA0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='playing-in-color-120336', format=5, channels=2, frequency=48000, lengthbytes=1044992, lengthpcm=3973537, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.846802.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9E7120258
-[LOG] SoundI::release                          : good-night-160166 (000001A9E7120E28)
-[LOG] SoundI::release                          :     good-night-160166 (000001A764C9C858)
-[LOG] SoundI::release                          :     good-night-160166 (000001A9018AD128)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9E7120408, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9E7120408
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A9D957A0E0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='cinematic-documentary-115669', format=5, channels=2, frequency=48000, lengthbytes=1880736, lengthpcm=6324558, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9E7120408
-[LOG] SoundI::release                          : playing-in-color-120336 (000001A9E7120258)
-[LOG] SoundI::release                          :     playing-in-color-120336 (000001A764C9AFF8)
-[LOG] SoundI::release                          :     playing-in-color-120336 (000001A9018AC3A8)
-[LOG] SystemI::createSound                     : filename = ../HeadphoneGuardian/Build/Desktop/songs.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001A9E7120918, queue head = 000001A902513678, queue count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001A9E7120918
-[LOG] SystemI::createSoundInternal             :     Create name='../HeadphoneGuardian/Build/Desktop/songs.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 4800608
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3424
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000001A9D957A5E0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='good-night-160166', format=5, channels=2, frequency=48000, lengthbytes=1871744, lengthpcm=7061838, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.999969.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001A9E7120918
-[LOG] SoundI::release                          : cinematic-documentary-115669 (000001A9E7120408)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A766798A68)
-[LOG] SoundI::release                          :     cinematic-documentary-115669 (000001A8FF067F38)
-[LOG] SoundI::release                          : static-noise-194184 (000001A764A06FE8)
-[LOG] SoundI::release                          :     static-noise-194184 (000001A9024A0BE8)
-[LOG] SoundI::release                          :     static-noise-194184 (000001A9018AC0A8)
-[LOG] SoundI::release                          : good-night-160166 (000001A9E7120918)
-[LOG] SoundI::release                          :     good-night-160166 (000001A9011B0AA8)
-[LOG] SoundI::release                          :     good-night-160166 (000001A9D4D52738)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='static-noise-194184', format=5, channels=1, frequency=48000, lengthbytes=248928, lengthpcm=1375503, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.138153.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015F6D7E6418
+[LOG] SoundI::release                          : static-noise-194184 (0000015FB3808258)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015F53C783C8)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015F4B2D7BB8)
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015F4B2D7D68, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015F4B2D7D68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015F4B2D7D68
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000015F575832C8, queue head = 0000015F76C408E8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000015F575832C8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000015F575832C8
+[LOG] SoundI::release                          : playing-in-color-120336 (0000015CD03AE788)
+[LOG] SoundI::release                          :     playing-in-color-120336 (0000015F56728548)
+[LOG] SoundI::release                          :     playing-in-color-120336 (0000015F575832C8)
+[LOG] SoundI::release                          : static-noise-194184 (0000015F6D7E6418)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015F53C78568)
+[LOG] SoundI::release                          :     static-noise-194184 (0000015F4B2D7D68)
+[LOG] SoundI::release                          :  (0000015FB41DD588)
+[LOG] SoundI::release                          :     tv-glitch (0000015E823B9C58)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -214,4 +123,3 @@
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
 [LOG] SystemI::close                           : Closed.
-[ERR] assert                                   : assertion: 'gSystemInitCount == 0' failed

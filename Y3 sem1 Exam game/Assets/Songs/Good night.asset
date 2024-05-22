@@ -15,4 +15,5 @@ MonoBehaviour:
   title: Good night
   genre: 0
   path: event:/good-night
-  songLength: 5
+  songLength: 147
+  color: {r: 0.44716978, g: 0.9546024, b: 1, a: 1}

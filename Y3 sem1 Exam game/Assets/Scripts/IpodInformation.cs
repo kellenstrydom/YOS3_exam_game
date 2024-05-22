@@ -17,12 +17,14 @@ public class IpodInformation : MonoBehaviour
     
     public ChildInformation _childInformation;
     public SoundManager _SoundManager;
+    public Material headphoneMat;
 
     [Header("Lure Data")]
     public float lureStrength;
     public float lureLifeTime;
 
     [Header("Song Data")]
+    public List<SongObject> allSongs = new List<SongObject>();
     [SerializeField]
     private List<SongObject> songQueue = new List<SongObject>();
     [SerializeField]
@@ -38,15 +40,31 @@ public class IpodInformation : MonoBehaviour
 
     private void Start()
     {
-        PlayNextSong();
+        //PlayNextSong();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.N))
             PlayNextSong();
+        
+        HeadphoneColor();
     }
 
+    public void PlaySelectedSong(SongObject song)
+    {
+        if (currentSong != null)
+        {
+            StopCoroutine(songTimerCoroutine);
+            songQueue.Add(currentSong);
+        }
+        
+        currentSong = song;
+        songQueue.Remove(currentSong);
+        _SoundManager.PlaySong(currentSong.path);
+
+        songTimerCoroutine = StartCoroutine(SongTimer(currentSong.songLength));
+    }
 
     public void PlayNextSong()
     {
@@ -70,9 +88,15 @@ public class IpodInformation : MonoBehaviour
             yield return new WaitForEndOfFrame();
             songTimer += Time.deltaTime;
         }
-        
-        
         PlayNextSong();
+    }
+
+    void HeadphoneColor()
+    {
+        if (currentSong == null) 
+            headphoneMat.color = Color.grey;
+        else
+            headphoneMat.color = currentSong.color;
     }
 
 }

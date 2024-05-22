@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b5cc6b49-e28c-4970-ae98-d2a50f31b935}">
+		<property name="assetPath">
+			<value>car-horns-in-street.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>75.792000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e35596dc-6001-4be4-a4a0-2339ee172c02}</destination>
+		</relationship>
+	</object>
+</objects>
