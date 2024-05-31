@@ -17,3 +17,6 @@ MonoBehaviour:
   path: event:/cinematic-documentary
   songLength: 132
   color: {r: 0.23708694, g: 1, b: 0.2117647, a: 1}
+  stats:
+    speedMultiplier: 1.4
+    stressMultiplier: 1

@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 288ee2d572fd91b4aab9775fe5b5978c, type: 3}
-  m_Name: Good night
+  m_Script: {fileID: 11500000, guid: a9038c67faa25734eb89468bd8677fa2, type: 3}
+  m_Name: Straight Enemy
   m_EditorClassIdentifier: 
-  title: Good night
-  genre: 0
-  path: event:/good-night
-  songLength: 147
-  color: {r: 1, g: 0.135849, b: 0.16948457, a: 1}
-  stats:
-    speedMultiplier: 2
-    stressMultiplier: 1.5
+  path: 
+  type: 1
+  stress: 10
+  turnSpeed: 0
+  sightRadius: 0
+  stressRadius: 0
+  moveSpeed: 3

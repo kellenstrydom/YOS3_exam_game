@@ -77,7 +77,7 @@ public class SoundManager : MonoBehaviour
         
         float volume = (stress - staticStartStressValue) / (staticMaxStressLevel - staticStartStressValue);
         volume *= volume;
-        
+
         if (volume > 1)
             musicVCA.setVolume(0);
         else

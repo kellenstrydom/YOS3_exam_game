@@ -75,9 +75,15 @@ public class IpodInformation : MonoBehaviour
         }
         currentSong = songQueue[0];
         songQueue.Remove(currentSong);
+        Debug.Log(currentSong.stats.speedMultiplier);
+        _childInformation.NewStats(currentSong.stats);
+        
         _SoundManager.PlaySong(currentSong.path);
+        
+
 
         songTimerCoroutine = StartCoroutine(SongTimer(currentSong.songLength));
+
     }
 
     IEnumerator SongTimer(float songLength)

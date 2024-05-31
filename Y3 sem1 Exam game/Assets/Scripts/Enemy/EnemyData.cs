@@ -7,7 +7,21 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Enemy")]
 public class EnemyData : ScriptableObject
 {
+    public enum EnemyType
+    {
+        follow,
+        straight,
+        up,
+        down,
+        left,
+        right,
+        
+    }
+    
     public string path;
+    public EnemyType type;
+    public float stress;
+    public float turnSpeed;
     public float sightRadius;
     public float stressRadius;
     public float moveSpeed;

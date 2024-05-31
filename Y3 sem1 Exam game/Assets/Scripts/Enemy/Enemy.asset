@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Enemy
   m_EditorClassIdentifier: 
   path: 
+  type: 0
+  stress: 10
+  turnSpeed: 45
   sightRadius: 10
   stressRadius: 5
   moveSpeed: 2

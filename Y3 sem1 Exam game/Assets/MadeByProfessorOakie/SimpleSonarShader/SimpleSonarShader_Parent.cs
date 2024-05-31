@@ -27,7 +27,7 @@ public class SimpleSonarShader_Parent : MonoBehaviour
     private Queue<float> intensityQueue = new Queue<float>(QueueSize);
 
 
-    private void Start()
+    private void Awake()
     {
         // Get renderers that will have effect applied to them
         ObjectRenderers = GetComponentsInChildren<Renderer>();

@@ -7,6 +7,15 @@ using UnityEngine;
 
 public class ChildInformation : MonoBehaviour
 {
+    [Serializable]
+    public struct Stats
+    {
+        public float speedMultiplier;
+        public float stressMultiplier;
+    }
+    
+    
+    
     [Header("Ipod Information")]
     [SerializeField] 
     private SoundManager _soundManager;
@@ -20,18 +29,38 @@ public class ChildInformation : MonoBehaviour
     [SerializeField]
     [Range(0, 100f)]
     public float stressLevel;
-    
+
+    public Stats currentStats;
+
     [Header("UI")]
     [SerializeField]
     private HUDController _hud;
 
     public Material childMaterial;
+
+    private void Start()
+    {
+        //currentStats = new Stats();
+        currentStats.speedMultiplier = 1;
+        currentStats.stressMultiplier = 1;
+    }
+
     // Update is called once per frame
     private void Update()
     {
-        CheckTargetSound();
+        //CheckTargetSound();
         
         CheckStressLevel();
+
+
+        if (Input.GetKey(KeyCode.Comma))
+        {
+            AddStress(-10 * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.Period))
+        {
+            AddStress(10 * Time.deltaTime);
+        }
     }
 
     void CheckStressLevel()
@@ -44,6 +73,7 @@ public class ChildInformation : MonoBehaviour
         _soundManager.ManageStressLevel(stressLevel);
         
     }
+    
 
     void CheckTargetSound()
     {
@@ -90,21 +120,27 @@ public class ChildInformation : MonoBehaviour
         //StartCoroutine(SoundLife(sound));
     }
 
-    // IEnumerator SoundLife(Sound sound)
-    // {
-    //     yield return new WaitForSeconds(sound.lifeTime);
-    //     if (sound == targetSound)
-    //     {
-    //         targetSound = null;
-    //         isSoundHeard = false;
-    //     }
-    //     sounds.Remove(sound);
-    // }
-
     public float DistanceFromSound()
     {
         return Vector3.Distance(transform.position, targetSound.transform.position);
     }
+    
+    
+    //test stress level
+    public void AddStress(float amount)
+    {
+        stressLevel += currentStats.speedMultiplier * amount;
 
-   
+        if (stressLevel > 100) stressLevel = 100;
+        
+        if (stressLevel < 0) stressLevel = 0;
+    }
+
+    public void NewStats(Stats stats)
+    {
+        Debug.Log(stats.speedMultiplier);
+        currentStats.speedMultiplier = stats.speedMultiplier;
+        currentStats.stressMultiplier = stats.stressMultiplier;
+    }
+
 }
