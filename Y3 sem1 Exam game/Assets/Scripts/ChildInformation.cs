@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using BrewedInk.CRT;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ChildInformation : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class ChildInformation : MonoBehaviour
     [SerializeField]
     private HUDController _hud;
     private ScreenShake cameraShake;
+    public CRTCameraBehaviour camData;
 
     public Material childMaterial;
 
@@ -45,6 +48,7 @@ public class ChildInformation : MonoBehaviour
         currentStats.speedMultiplier = 1;
         currentStats.stressMultiplier = 1;
         cameraShake = Camera.main.GetComponent<ScreenShake>();
+        UpdateCamStuff();
     }
 
     // Update is called once per frame
@@ -141,6 +145,14 @@ public class ChildInformation : MonoBehaviour
         if (stressLevel > 100) stressLevel = 100;
         
         if (stressLevel < 0) stressLevel = 0;
+        
+        UpdateCamStuff();
+    }
+
+    void UpdateCamStuff()
+    {
+        camData.data.vignette = Mathf.Lerp(0.1f, 2, stressLevel / 100f);
+        camData.data.pixelationAmount = Mathf.RoundToInt(Mathf.Lerp(0, 5, stressLevel / 100f));
     }
 
     public void NewStats(Stats stats)
