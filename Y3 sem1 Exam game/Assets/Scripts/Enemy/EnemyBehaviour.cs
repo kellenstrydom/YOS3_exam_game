@@ -78,6 +78,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         
-        other.GetComponent<ChildInformation>().AddStress(data.stress);
+        other.GetComponent<ChildInformation>().Hit(data.stress);
+        
     }
 }

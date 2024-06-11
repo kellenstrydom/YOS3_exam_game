@@ -35,6 +35,7 @@ public class ChildInformation : MonoBehaviour
     [Header("UI")]
     [SerializeField]
     private HUDController _hud;
+    private ScreenShake cameraShake;
 
     public Material childMaterial;
 
@@ -43,6 +44,7 @@ public class ChildInformation : MonoBehaviour
         //currentStats = new Stats();
         currentStats.speedMultiplier = 1;
         currentStats.stressMultiplier = 1;
+        cameraShake = Camera.main.GetComponent<ScreenShake>();
     }
 
     // Update is called once per frame
@@ -124,7 +126,12 @@ public class ChildInformation : MonoBehaviour
     {
         return Vector3.Distance(transform.position, targetSound.transform.position);
     }
-    
+
+    public void Hit(float stressAmount)
+    {
+        AddStress(stressAmount);
+        cameraShake.ShakeScreenOnHit(1,stressLevel);
+    }
     
     //test stress level
     public void AddStress(float amount)
