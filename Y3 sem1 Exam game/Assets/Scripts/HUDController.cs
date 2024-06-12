@@ -30,16 +30,21 @@ public class HUDController : MonoBehaviour
         PopulateSelect();
     }
 
+    private void Start()
+    {
+        DisplayPlaylistScreen();
+    }
+
     private void Update()
     {
         DisplayStress();
         DisplayCurrentSong();
         
         if (Input.GetKeyDown(KeyCode.Tab))
-            DisplaySongScreen();
+            DisplayPlaylistScreen();
     }
 
-    void DisplaySongScreen()
+    void DisplayPlaylistScreen()
     {
         foreach (var ui in selectUIs)
         {
@@ -55,10 +60,16 @@ public class HUDController : MonoBehaviour
             Time.timeScale = 1;
     }
 
+    public void SelectedPlaylist(PlaylistObject playlist)
+    {
+        _ipod.SelectPlaylist(playlist);
+        DisplayPlaylistScreen();
+    }
+
     public void SongSelected(SongObject song)
     {
         _ipod.PlaySelectedSong(song);
-        DisplaySongScreen();
+        DisplayPlaylistScreen();
     }
 
     public void DisplayStress()
@@ -86,7 +97,7 @@ public class HUDController : MonoBehaviour
             Destroy(x.gameObject);
         }
         
-        float count = _ipod.allSongs.Count;
+        float count = _ipod.allPlaylists.Count;
         double angle = (2 * Math.PI) / count;
 
         for (int i = 0; i < count; i++)
@@ -96,7 +107,7 @@ public class HUDController : MonoBehaviour
             obj.GetComponent<RectTransform>().localPosition = pos;
             SongSelectUI selectUI = obj.GetComponent<SongSelectUI>();
             selectUIs.Add(selectUI);
-            selectUI.SongData(_ipod.allSongs[i]);
+            selectUI.SongData(_ipod.allPlaylists[i]);
         }
 
     }

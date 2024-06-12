@@ -39,6 +39,7 @@ public class EnemyBehaviour : MonoBehaviour
     private void Start()
     {
         _shaderParent.StartSonarRing(transform.position,1);
+        Destroy(gameObject,data.lifeTime);
     }
 
     private void Update()
@@ -65,6 +66,7 @@ public class EnemyBehaviour : MonoBehaviour
         float singleStep = data.turnSpeed * Mathf.PI / 180f * Time.deltaTime;
 
         transform.forward = Vector3.RotateTowards(transform.forward, playerDir, singleStep, 0.0f);
+        transform.forward = new Vector3(transform.forward.x, 0, transform.forward.z);
         
         transform.position += transform.forward * (data.moveSpeed * Time.deltaTime);
     }
@@ -76,9 +78,16 @@ public class EnemyBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Shield"))
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
         if (!other.CompareTag("Player")) return;
         
         other.GetComponent<ChildInformation>().Hit(data.stress);
+        Destroy(gameObject);
         
     }
 }

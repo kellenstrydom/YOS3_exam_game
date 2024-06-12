@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class EnemyTrigger : MonoBehaviour
 {
-    public GameObject enemies;
+    public Transform enemies;
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
 
-        foreach (GameObject enemy in enemies.GetComponentsInChildren<GameObject>())
+        foreach (Transform enemy in enemies)
         {
-            enemy.SetActive(true);
+            enemy.gameObject.SetActive(true);
         }
     }
 }

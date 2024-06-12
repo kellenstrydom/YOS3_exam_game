@@ -10,7 +10,7 @@ public class SongSelectUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     private IpodInformation _ipod;
     public TMP_Text title;
-    private SongObject song;
+    private PlaylistObject playlist;
 
     public HUDController _hud;
 
@@ -26,10 +26,10 @@ public class SongSelectUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             gameObject.GetComponent<Image>().color = Color.white;
     }
 
-    public void SongData(SongObject song)
+    public void SongData(PlaylistObject playlist)
     {
-        this.song = song;
-        title.text = $"{song.title}";
+        this.playlist = playlist;
+        title.text = $"{this.playlist.playlistName}";
     }
 
     public void Reset()
@@ -40,7 +40,7 @@ public class SongSelectUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        gameObject.GetComponent<Image>().color = song.color;
+        gameObject.GetComponent<Image>().color = playlist.color;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -50,6 +50,6 @@ public class SongSelectUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        _hud.SongSelected(song);
+        _hud.SelectedPlaylist(playlist);
     }
 }

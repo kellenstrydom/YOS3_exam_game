@@ -157,7 +157,6 @@ public class ChildInformation : MonoBehaviour
 
     public void NewStats(Stats stats)
     {
-        Debug.Log(stats.speedMultiplier);
         currentStats.speedMultiplier = stats.speedMultiplier;
         currentStats.stressMultiplier = stats.stressMultiplier;
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,14 @@ public class ChildMovement : MonoBehaviour
     
     [SerializeField]
     private float speed;
-    
+
+    private ChildInformation _child;
+
+    private void Start()
+    {
+        _child = gameObject.GetComponent<ChildInformation>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +34,7 @@ public class ChildMovement : MonoBehaviour
     {
         dir = new Vector3(fixVal(dir.x), 0, fixVal(dir.z)).normalized;
         if (dir.magnitude != 0) transform.forward = dir;
-        transform.position += (dir * (speed * Time.deltaTime));
+        transform.position += (dir * (speed * Time.deltaTime * _child.currentStats.speedMultiplier));
     }
 
     Vector3 PlayerMovement()

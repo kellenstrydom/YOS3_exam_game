@@ -19,18 +19,22 @@ public class IpodInformation : MonoBehaviour
     public SoundManager _SoundManager;
     public Material headphoneMat;
 
-    [Header("Lure Data")]
-    public float lureStrength;
-    public float lureLifeTime;
+    // [Header("Lure Data")]
+    // public float lureStrength;
+    // public float lureLifeTime;
 
-    [Header("Song Data")]
-    public List<SongObject> allSongs = new List<SongObject>();
+    [Header("Song Data")] 
+    public List<PlaylistObject> allPlaylists = new List<PlaylistObject>();
+    public PlaylistObject currentPlaylist;
+    //public List<SongObject> allSongs = new List<SongObject>();
     [SerializeField]
     private List<SongObject> songQueue = new List<SongObject>();
     [SerializeField]
     public SongObject currentSong;
 
     public float songTimer;
+
+    public Transform spellSlot;
     
     
     
@@ -40,7 +44,7 @@ public class IpodInformation : MonoBehaviour
 
     private void Start()
     {
-        //PlayNextSong();
+        HeadphoneColor();
     }
 
     private void Update()
@@ -48,7 +52,7 @@ public class IpodInformation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
             PlayNextSong();
         
-        HeadphoneColor();
+        // HeadphoneColor();
     }
 
     public void PlaySelectedSong(SongObject song)
@@ -75,8 +79,7 @@ public class IpodInformation : MonoBehaviour
         }
         currentSong = songQueue[0];
         songQueue.Remove(currentSong);
-        Debug.Log(currentSong.stats.speedMultiplier);
-        _childInformation.NewStats(currentSong.stats);
+        //Debug.Log(currentSong.stats.speedMultiplier);
         
         _SoundManager.PlaySong(currentSong.path);
         
@@ -99,10 +102,31 @@ public class IpodInformation : MonoBehaviour
 
     void HeadphoneColor()
     {
-        if (currentSong == null) 
+        if (currentPlaylist == null) 
             headphoneMat.color = Color.grey;
         else
-            headphoneMat.color = currentSong.color;
+            headphoneMat.color = currentPlaylist.color;
+    }
+
+    public void SelectPlaylist(PlaylistObject playlist)
+    {
+        currentPlaylist = playlist;
+        songQueue = new List<SongObject>();
+        songQueue.AddRange(playlist.songList);
+        _childInformation.NewStats(currentPlaylist.stats);
+        
+        HeadphoneColor();
+        PlayNextSong();
+        
+        ChangeSpell();
+    }
+
+    void ChangeSpell()
+    {
+        if (spellSlot.gameObject.GetComponentsInChildren<Transform>().Length > 1)
+            Destroy(spellSlot.gameObject.GetComponentsInChildren<Transform>()[1].gameObject);
+        if (currentPlaylist.spell == null) return;
+        Instantiate(currentPlaylist.spell, spellSlot);
     }
 
 }

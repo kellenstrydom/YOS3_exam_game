@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdcbf4ce6749434cb82d2e42f67105e, type: 3}
+  m_Name: Hip Hop
+  m_EditorClassIdentifier: 
+  playlistName: Hip Hop
+  songList:
+  - {fileID: 11400000, guid: f9cb8877c4d030a4b8501b31aafa5093, type: 2}
+  spell: {fileID: 0}
+  color: {r: 1, g: 0.84788454, b: 0.40943396, a: 1}
+  speedMultiplier: 0
+  stressMultiplier: 0
+  stats:
+    speedMultiplier: 1.25
+    stressMultiplier: 1

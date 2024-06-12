@@ -15,31 +15,32 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     private bool isStaticPlaying = false;
 
-    [SerializeField]
-    private float staticStartStressValue;
-    [SerializeField]
-    private float staticMaxStressLevel;
-
-    [SerializeField] private float musicBeginFadeStress;
-    [SerializeField] private float musicEndFadeStress;
+    // [SerializeField]
+    // private float staticStartStressValue;
+    // [SerializeField]
+    // private float staticMaxStressLevel;
+    //
+    // [SerializeField] private float musicBeginFadeStress;
+    // [SerializeField] private float musicEndFadeStress;
 
     public float staticVolume;
     public float musicVolume;
-    [SerializeField] private float staticLowestDb;
-    [SerializeField] [Range(-80f, 10f)] 
-    private float musicVCAvol;
-    [SerializeField][Range(-80f, 10f)] 
-    private float vcaVolume;
-    
-    void Update() 
-    {
-        // currentVolume = Mathf.Pow(10.0f, vcaVolume / 20f);
-        // staticSound.setVolume(currentVolume);
-    }
 
+    public AnimationCurve staticCurve;
+    public AnimationCurve musicCurve;
+    // [SerializeField] private float staticLowestDb;
+    // [SerializeField] [Range(-80f, 10f)] 
+    // private float musicVCAvol;
+    // [SerializeField][Range(-80f, 10f)] 
+    // private float vcaVolume;
+
+    //public ChildInformation _child;
+    
 
     private void Awake()
     {
+        //_child = GameObject.FindWithTag("Player").GetComponent<ChildInformation>();
+        
         if (!staticSound.isValid())
         {
             staticSound = FMODUnity.RuntimeManager.CreateInstance("event:/static-noise");
@@ -48,27 +49,36 @@ public class SoundManager : MonoBehaviour
             staticVCA = FMODUnity.RuntimeManager.GetVCA("vca:/Static");
             musicVCA = FMODUnity.RuntimeManager.GetVCA("vca:/Music");
         }
+        
+        StartStatic();
+        
     }
 
     public void ManageStressLevel(float stress)
     {
-        if (stress < staticStartStressValue)
-        {
-            if (isStaticPlaying)
-            {
-                StopStatic();
-            }
-            return;
-        }
-        if (!isStaticPlaying)
-        {
-            StartStatic();
-        }
+        musicVolume = musicCurve.Evaluate(stress / 100f);
+        musicVCA.setVolume(musicVolume);
+        
+        staticVolume = staticCurve.Evaluate(stress / 100f);
+        staticVCA.setVolume(staticVolume);
+        
+        // if (stress < staticStartStressValue)
+        // {
+        //     if (isStaticPlaying)
+        //     {
+        //         StopStatic();
+        //     }
+        //     return;
+        // }
+        // if (!isStaticPlaying)
+        // {
+        //     StartStatic();
+        // }
         
         // StaticVolume(stress);
         // MusicVolume(stress);
         
-        SimpleStressVolume(stress);
+        //SimpleStressVolume(stress);
     }
     
     void StartStatic()
@@ -77,57 +87,57 @@ public class SoundManager : MonoBehaviour
         staticSound.setPaused(!isStaticPlaying);
     }
 
-    void SimpleStressVolume(float stress)
-    {
-        float musicScale = (stress - musicBeginFadeStress) / (musicEndFadeStress - musicBeginFadeStress);
-        float staticScale = (stress - staticStartStressValue) / (staticMaxStressLevel - staticStartStressValue);
-
-        if (musicScale < 0)
-            musicVolume = 1;
-        else if (musicScale > 1)
-            musicVolume = 0;
-        else
-            musicVolume = 1 - musicScale;
-        
-        if (staticScale < 0)
-            staticVolume = 0;
-        else if (staticScale > 1)
-            staticVolume = 1;
-        else
-            staticVolume = staticScale;
-
-        musicVCA.setVolume(musicVolume);
-        staticVCA.setVolume(staticVolume);
-
-
-    }
-
-    void StaticVolume(float stress)
-    {
-
-        float volScale = (stress - staticStartStressValue) / (staticMaxStressLevel - staticStartStressValue);
-        vcaVolume = staticLowestDb + volScale * -staticLowestDb;
-        staticVolume = Mathf.Pow(10.0f, vcaVolume / 20f);
-        if (staticVolume > 1)
-        {
-            staticVolume = 1;
-        }        
-        
-        staticVCA.setVolume(staticVolume);
-    }
+    // void SimpleStressVolume(float stress)
+    // {
+    //     float musicScale = (stress - musicBeginFadeStress) / (musicEndFadeStress - musicBeginFadeStress);
+    //     float staticScale = (stress - staticStartStressValue) / (staticMaxStressLevel - staticStartStressValue);
+    //
+    //     if (musicScale < 0)
+    //         musicVolume = 1;
+    //     else if (musicScale > 1)
+    //         musicVolume = 0;
+    //     else
+    //         musicVolume = 1 - musicScale;
+    //     
+    //     if (staticScale < 0)
+    //         staticVolume = 0;
+    //     else if (staticScale > 1)
+    //         staticVolume = 1;
+    //     else
+    //         staticVolume = staticScale;
+    //
+    //     musicVCA.setVolume(musicVolume);
+    //     staticVCA.setVolume(staticVolume);
+    //
+    //
+    // }
     
-    void MusicVolume(float stress)
-    {
-        
-        float volScale = (stress - musicBeginFadeStress) / (musicEndFadeStress - musicBeginFadeStress);
-        musicVCAvol = volScale * staticLowestDb;
-        musicVolume = Mathf.Pow(10.0f, musicVCAvol / 20f);
-
-        if (musicVolume > 1)
-            musicVolume = 1;
-        
-        musicVCA.setVolume(musicVolume);
-    }
+    // void StaticVolume(float stress)
+    // {
+    //
+    //     float volScale = (stress - staticStartStressValue) / (staticMaxStressLevel - staticStartStressValue);
+    //     vcaVolume = staticLowestDb + volScale * -staticLowestDb;
+    //     staticVolume = Mathf.Pow(10.0f, vcaVolume / 20f);
+    //     if (staticVolume > 1)
+    //     {
+    //         staticVolume = 1;
+    //     }        
+    //     
+    //     staticVCA.setVolume(staticVolume);
+    // }
+    //
+    // void MusicVolume(float stress)
+    // {
+    //     
+    //     float volScale = (stress - musicBeginFadeStress) / (musicEndFadeStress - musicBeginFadeStress);
+    //     musicVCAvol = volScale * staticLowestDb;
+    //     musicVolume = Mathf.Pow(10.0f, musicVCAvol / 20f);
+    //
+    //     if (musicVolume > 1)
+    //         musicVolume = 1;
+    //     
+    //     musicVCA.setVolume(musicVolume);
+    // }
 
     void StopStatic()
     {

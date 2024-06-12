@@ -17,7 +17,8 @@ public class EnemyData : ScriptableObject
         right,
         
     }
-    
+
+    public float lifeTime;
     public string path;
     public EnemyType type;
     public float stress;
