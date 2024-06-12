@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
+    
+    
     private IpodInformation _ipod;
     private ChildInformation _child;
 
@@ -16,10 +18,14 @@ public class HUDController : MonoBehaviour
     [Header("Stress")]
     [SerializeField]
     private TMP_Text stressText;
+
+    [SerializeField] private Image stressSlider;
     
     [Header("Playlist")]
     [SerializeField] private TMP_Text currentText;
     [SerializeField] private TMP_Text runtimeText;
+    [SerializeField] private TMP_Text stressStatsText;
+    [SerializeField] private TMP_Text speedStatsText;
     [SerializeField] private GameObject songPlaylistPanel;
     [SerializeField] private GameObject songSelectPrefab;
 
@@ -28,9 +34,15 @@ public class HUDController : MonoBehaviour
     [SerializeField] private TMP_Text spellText;
     [SerializeField] private Image spellCooldown;
     
+    [Header("Pause")]
+    public bool isPaused;
+    [SerializeField] private GameObject pausePanel;
+
+    private GameManager gm;
 
     private void Awake()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _ipod = GameObject.FindWithTag("Player").GetComponent<IpodInformation>();
         _child = GameObject.FindWithTag("Player").GetComponent<ChildInformation>();
         
@@ -46,8 +58,15 @@ public class HUDController : MonoBehaviour
     {
         DisplayStress();
         DisplayCurrentSong();
+       
+        if (!gm.isAllowingInputs) return;
         
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Escape))
+            PauseGame();
+        
+
+        if (isPaused) return;
+        if (Input.GetKeyDown(KeyCode.Tab) && !songPlaylistPanel.activeInHierarchy)
             DisplayPlaylistScreen();
     }
 
@@ -62,7 +81,7 @@ public class HUDController : MonoBehaviour
         songPlaylistPanel.SetActive(!isActive);
         
         if (!isActive)
-            Time.timeScale = .2f;
+            Time.timeScale = 0;
         else
             Time.timeScale = 1;
     }
@@ -82,6 +101,7 @@ public class HUDController : MonoBehaviour
     public void DisplayStress()
     {
         stressText.text = $"Stress: {_child.stressLevel}";
+        stressSlider.fillAmount = _child.stressLevel / 100f;
     }
 
     public void DisplayCurrentSong()
@@ -118,6 +138,15 @@ public class HUDController : MonoBehaviour
         }
     }
 
+    public void DisplayPlaylist(PlaylistObject playlist)
+    {
+        ChangeSpell(playlist.spellName,playlist.color);
+        speedStatsText.text = "Speed: ";
+        speedStatsText.text += playlist.stats.speedMultiplier > 1 ? $"+{(playlist.stats.speedMultiplier - 1) * 100}%" : $"{(playlist.stats.speedMultiplier - 1) * 100}%";
+        stressStatsText.text = "Stress: ";
+        stressStatsText.text += playlist.stats.stressMultiplier > 1 ? $"+{(playlist.stats.stressMultiplier - 1) * 100}%" : $"{(playlist.stats.stressMultiplier - 1) * 100}%";
+    }
+
     public void ChangeSpell(string name, Color color)
     {
         spellText.text = name;
@@ -127,6 +156,25 @@ public class HUDController : MonoBehaviour
     public void SpellCooldown(float timeLeft, float totalLength)
     {
         spellCooldown.fillAmount = timeLeft / totalLength;
+    }
+
+    public void PauseGame()
+    {
+        isPaused = !isPaused;
+
+        Time.timeScale = isPaused ? 0 : 1;
+        
+        pausePanel.SetActive(isPaused);
+    }
+
+    public void MainMenu()
+    {
+        //
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
     
 }

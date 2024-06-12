@@ -15,8 +15,8 @@ public class ChildInformation : MonoBehaviour
         public float speedMultiplier;
         public float stressMultiplier;
     }
-    
-    
+
+    private GameManager gm;
     
     [Header("Ipod Information")]
     [SerializeField] 
@@ -42,6 +42,13 @@ public class ChildInformation : MonoBehaviour
 
     public Material childMaterial;
 
+    private void Awake()
+    {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
+        camData = Camera.main.gameObject.GetComponent<CRTCameraBehaviour>();
+        _hud = GameObject.FindWithTag("HUD").GetComponent<HUDController>();
+    }
+
     private void Start()
     {
         //currentStats = new Stats();
@@ -54,10 +61,11 @@ public class ChildInformation : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        //CheckTargetSound();
-        
+        if (_hud.isPaused) return;
+
         CheckStressLevel();
 
+        if (!gm.isAllowingInputs) return;
 
         if (Input.GetKey(KeyCode.Comma))
         {

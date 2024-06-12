@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a9038c67faa25734eb89468bd8677fa2, type: 3}
-  m_Name: Enemy
+  m_Name: LEFT
   m_EditorClassIdentifier: 
-  lifeTime: 7
+  lifeTime: 12
   path: 
-  type: 0
+  type: 4
   stress: 10
-  turnSpeed: 45
-  sightRadius: 10
-  stressRadius: 5
-  moveSpeed: 2
+  turnSpeed: 0
+  sightRadius: 0
+  stressRadius: 0
+  moveSpeed: 6

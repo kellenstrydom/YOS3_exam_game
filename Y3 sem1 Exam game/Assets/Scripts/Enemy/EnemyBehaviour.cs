@@ -15,7 +15,11 @@ public class EnemyBehaviour : MonoBehaviour
     {
         child = GameObject.FindWithTag("Player").GetComponent<Transform>();
         _shaderParent = GameObject.FindWithTag("Floor").GetComponent<SimpleSonarShader_Parent>();
+    }
 
+    private void Start()
+    {
+        _shaderParent.StartSonarRing(transform.position,1);
         switch (data.type)
         {
             case EnemyData.EnemyType.follow:
@@ -35,11 +39,6 @@ public class EnemyBehaviour : MonoBehaviour
                 transform.forward = Vector3.right;
                 break;
         }
-    }
-
-    private void Start()
-    {
-        _shaderParent.StartSonarRing(transform.position,1);
         Destroy(gameObject,data.lifeTime);
     }
 

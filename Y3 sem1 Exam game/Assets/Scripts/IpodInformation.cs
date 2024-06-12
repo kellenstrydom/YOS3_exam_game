@@ -40,15 +40,18 @@ public class IpodInformation : MonoBehaviour
     private Coroutine songTimerCoroutine;
     
     private HUDController _hud;
-
+    private GameManager gm;
     private void Start()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _hud = GameObject.FindWithTag("HUD").GetComponent<HUDController>();
         HeadphoneColor();
     }
 
     private void Update()
     {
+        if (_hud.isPaused) return;
+        if (!gm.isAllowingInputs) return;
         if (Input.GetKeyDown(KeyCode.N))
             PlayNextSong();
         
@@ -128,7 +131,7 @@ public class IpodInformation : MonoBehaviour
         if (currentPlaylist.spell == null) return;
         Instantiate(currentPlaylist.spell, spellSlot);
         
-        _hud.ChangeSpell(currentPlaylist.spellName,currentPlaylist.color);
+        _hud.DisplayPlaylist(currentPlaylist);
     }
 
 }

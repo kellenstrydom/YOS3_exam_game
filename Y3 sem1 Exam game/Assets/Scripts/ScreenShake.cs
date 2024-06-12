@@ -5,10 +5,10 @@ using UnityEngine;
 public class ScreenShake : MonoBehaviour
 {
     public AnimationCurve curve;
-    
+
     public void ShakeScreenOnHit(float duration, float stress)
     {
-        float strengthScale = 1 + stress / 100f;
+        float strengthScale = 1 + stress / 100f * 2;
         StartCoroutine(Shaking(duration, strengthScale));
     }
 

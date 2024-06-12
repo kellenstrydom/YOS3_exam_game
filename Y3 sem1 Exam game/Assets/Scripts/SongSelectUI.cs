@@ -14,8 +14,10 @@ public class SongSelectUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public HUDController _hud;
 
+    private GameManager gm;
     private void Awake()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _ipod = GameObject.FindWithTag("Player").GetComponent<IpodInformation>();
         _hud = GameObject.FindWithTag("HUD").GetComponent<HUDController>();
     }
@@ -50,6 +52,7 @@ public class SongSelectUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        if (!gm.isAllowingInputs) return;
         _hud.SelectedPlaylist(playlist);
     }
 }

@@ -14,8 +14,11 @@ public class SlideSpell : MonoBehaviour
 
     private HUDController _hud;
 
+    private GameManager gm;
+
     private void Start()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _hud = GameObject.FindWithTag("HUD").GetComponent<HUDController>();
         _hud.SpellCooldown(0,1);
         _child = GameObject.FindWithTag("Player").GetComponent<ChildMovement>();
@@ -23,6 +26,7 @@ public class SlideSpell : MonoBehaviour
 
     private void Update()
     {
+      if (!gm.isAllowingInputs || _hud.isPaused) return;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             CastShield();
@@ -32,6 +36,7 @@ public class SlideSpell : MonoBehaviour
     void CastShield()
     {
         if (isOnCooldown) return;
+        GameObject.FindWithTag("Floor").GetComponent<SimpleSonarShader_Parent>().StartSonarRing(transform.position,1);
 
         StartCoroutine(StartSlide());
         
