@@ -9,7 +9,8 @@ public class EnemyBehaviour : MonoBehaviour
     [SerializeField]
     private EnemyData data;
     private SimpleSonarShader_Parent _shaderParent;
-
+    private bool isPushed;
+    
     private void Awake()
     {
         child = GameObject.FindWithTag("Player").GetComponent<Transform>();
@@ -76,12 +77,37 @@ public class EnemyBehaviour : MonoBehaviour
         transform.position += transform.forward * (data.moveSpeed * Time.deltaTime);
     }
 
+    IEnumerator Pushed(Vector3 dir, float duration, float distance)
+    {
+        float timer = 0;
+        isPushed = true;
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            transform.position += (dir *(distance/duration * Time.deltaTime));
+            yield return null;
+        }
+
+        isPushed = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Shield"))
         {
             Destroy(gameObject);
             return;
+        }
+
+        if (other.GetComponent<PushBack>() != null)
+        {
+            if (!isPushed)
+            {
+                PushBack pushBack = other.GetComponent<PushBack>();
+                
+                Vector3 dir = other.GetComponent<Rigidbody>().velocity.normalized;
+                StartCoroutine(Pushed(dir, pushBack.duration, pushBack.distance));
+            }        
         }
         
         if (!other.CompareTag("Player")) return;

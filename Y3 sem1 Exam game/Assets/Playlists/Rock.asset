@@ -16,10 +16,9 @@ MonoBehaviour:
   songList:
   - {fileID: 11400000, guid: f9cb8877c4d030a4b8501b31aafa5093, type: 2}
   - {fileID: 11400000, guid: 779bbb25ba5215d4e84117caf90e3356, type: 2}
-  spell: {fileID: 0}
+  spellName: Shout
+  spell: {fileID: 3293667140902958830, guid: 078be0d01aeb8f34cb0fedecbfe5005c, type: 3}
   color: {r: 0.5660146, g: 0.29622638, b: 1, a: 1}
-  speedMultiplier: 0
-  stressMultiplier: 0
   stats:
     speedMultiplier: 1.75
     stressMultiplier: 1.25

@@ -36,14 +36,14 @@ public class IpodInformation : MonoBehaviour
 
     public Transform spellSlot;
     
-    
-    
-    
     // flags and trackers
     private Coroutine songTimerCoroutine;
+    
+    private HUDController _hud;
 
     private void Start()
     {
+        _hud = GameObject.FindWithTag("HUD").GetComponent<HUDController>();
         HeadphoneColor();
     }
 
@@ -127,6 +127,8 @@ public class IpodInformation : MonoBehaviour
             Destroy(spellSlot.gameObject.GetComponentsInChildren<Transform>()[1].gameObject);
         if (currentPlaylist.spell == null) return;
         Instantiate(currentPlaylist.spell, spellSlot);
+        
+        _hud.ChangeSpell(currentPlaylist.spellName,currentPlaylist.color);
     }
 
 }

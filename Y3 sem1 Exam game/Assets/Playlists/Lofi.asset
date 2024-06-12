@@ -15,6 +15,7 @@ MonoBehaviour:
   playlistName: Lofi
   songList:
   - {fileID: 11400000, guid: c7124d95f9ae73f409e670e24fd6233c, type: 2}
+  spellName: Calm
   spell: {fileID: 8040474554547591284, guid: 8cae02def3d40964e886c1045dc45edd, type: 3}
   color: {r: 0.57378066, g: 0.990566, b: 0.76284385, a: 1}
   stats:

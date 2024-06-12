@@ -10,9 +10,10 @@ public class ChildMovement : MonoBehaviour
     private Vector3 direction;
     
     [SerializeField]
-    private float speed;
+    public float speed;
 
     private ChildInformation _child;
+    public Transform lookDir;
 
     private void Start()
     {
@@ -33,7 +34,8 @@ public class ChildMovement : MonoBehaviour
     void Move(Vector3 dir)
     {
         dir = new Vector3(fixVal(dir.x), 0, fixVal(dir.z)).normalized;
-        if (dir.magnitude != 0) transform.forward = dir;
+        if (dir.magnitude != 0) 
+            lookDir.forward = dir;
         transform.position += (dir * (speed * Time.deltaTime * _child.currentStats.speedMultiplier));
     }
 

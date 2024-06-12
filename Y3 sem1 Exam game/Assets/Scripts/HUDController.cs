@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour
 {
@@ -21,6 +22,12 @@ public class HUDController : MonoBehaviour
     [SerializeField] private TMP_Text runtimeText;
     [SerializeField] private GameObject songPlaylistPanel;
     [SerializeField] private GameObject songSelectPrefab;
+
+    [Header("Spell")] 
+    [SerializeField] private Image spellBackground;
+    [SerializeField] private TMP_Text spellText;
+    [SerializeField] private Image spellCooldown;
+    
 
     private void Awake()
     {
@@ -109,7 +116,17 @@ public class HUDController : MonoBehaviour
             selectUIs.Add(selectUI);
             selectUI.SongData(_ipod.allPlaylists[i]);
         }
+    }
 
+    public void ChangeSpell(string name, Color color)
+    {
+        spellText.text = name;
+        spellBackground.color = color;
+    }
+
+    public void SpellCooldown(float timeLeft, float totalLength)
+    {
+        spellCooldown.fillAmount = timeLeft / totalLength;
     }
     
 }

@@ -15,10 +15,9 @@ MonoBehaviour:
   playlistName: Hip Hop
   songList:
   - {fileID: 11400000, guid: f9cb8877c4d030a4b8501b31aafa5093, type: 2}
-  spell: {fileID: 0}
+  spellName: Slide
+  spell: {fileID: 3365086036147548927, guid: 259c830868cca8f498cb33d6af9f03b4, type: 3}
   color: {r: 1, g: 0.84788454, b: 0.40943396, a: 1}
-  speedMultiplier: 0
-  stressMultiplier: 0
   stats:
     speedMultiplier: 1.25
     stressMultiplier: 1

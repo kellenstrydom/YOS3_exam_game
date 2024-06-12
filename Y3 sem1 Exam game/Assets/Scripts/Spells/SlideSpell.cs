@@ -1,23 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShieldSpell : MonoBehaviour
+public class SlideSpell : MonoBehaviour
 {
     public float duration;
+    public float slideSpeed;
     public float cooldownLength;
     public float cooldownTimer;
     public bool isOnCooldown;
-    public GameObject shield;
-    
+    public ChildMovement _child;
+
     private HUDController _hud;
 
     private void Start()
     {
         _hud = GameObject.FindWithTag("HUD").GetComponent<HUDController>();
         _hud.SpellCooldown(0,1);
+        _child = GameObject.FindWithTag("Player").GetComponent<ChildMovement>();
     }
 
     private void Update()
@@ -31,12 +32,19 @@ public class ShieldSpell : MonoBehaviour
     void CastShield()
     {
         if (isOnCooldown) return;
-        
-        Transform player = GameObject.FindWithTag("Player").GetComponent<Transform>();
-        GameObject obj = Instantiate(shield, player);
-        Destroy(obj,duration);
 
+        StartCoroutine(StartSlide());
+        
         StartCoroutine(StartCooldown());
+    }
+
+    IEnumerator StartSlide()
+    {
+        float oldSpeed = _child.speed;
+        _child.speed = slideSpeed;
+
+        yield return new WaitForSeconds(duration);
+        _child.speed = oldSpeed;
     }
 
     IEnumerator StartCooldown()
