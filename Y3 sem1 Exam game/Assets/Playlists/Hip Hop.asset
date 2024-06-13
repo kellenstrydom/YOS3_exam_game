@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playlistName: Hip Hop
   songList:
-  - {fileID: 11400000, guid: f9cb8877c4d030a4b8501b31aafa5093, type: 2}
+  - {fileID: 11400000, guid: 31648fb20d4b81c46ad634a726ab09e3, type: 2}
+  - {fileID: 11400000, guid: 9465def1999fbf549a8639983b2278dc, type: 2}
   spellName: Slide
   spell: {fileID: 3365086036147548927, guid: 259c830868cca8f498cb33d6af9f03b4, type: 3}
   color: {r: 1, g: 0.84788454, b: 0.40943396, a: 1}

@@ -105,7 +105,7 @@ public class HUDController : MonoBehaviour
 
     public void DisplayStress()
     {
-        stressText.text = $"Stress: {_child.stressLevel}";
+        stressText.text = $"Stress: {(int)_child.stressLevel}";
         stressSlider.fillAmount = _child.stressLevel / 100f;
     }
 

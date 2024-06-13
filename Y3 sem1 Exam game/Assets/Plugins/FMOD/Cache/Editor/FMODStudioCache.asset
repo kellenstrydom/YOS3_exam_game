@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: ../HeadphoneGuardian/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638520154528715564
+  lastModified: 638539164047762520
   FileSizes:
   - Name: Desktop
-    Value: 1384
+    Value: 1508
   Exists: 1
 --- !u!114 &-7080054310819568676
 MonoBehaviour:
@@ -62,11 +62,92 @@ MonoBehaviour:
   Path: ../HeadphoneGuardian/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638520154528705506
+  lastModified: 638539164047741695
   FileSizes:
   - Name: Desktop
     Value: 2001312
   Exists: 1
+--- !u!114 &-6953458685892862964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/hip-hop-funk
+  m_EditorClassIdentifier: 
+  Path: event:/hip-hop-funk
+  Guid:
+    Data1: -2023596695
+    Data2: 1302928360
+    Data3: 717643409
+    Data4: -784846786
+  Banks:
+  - {fileID: 5349248923148030876}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 73377
+--- !u!114 &-6396708958287847490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/in-hip-hop
+  m_EditorClassIdentifier: 
+  Path: event:/in-hip-hop
+  Guid:
+    Data1: 537254298
+    Data2: 1297403650
+    Data3: -1268217434
+    Data4: -2059412135
+  Banks:
+  - {fileID: 5349248923148030876}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 115748
+--- !u!114 &-6263893965950742839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/mt-thndr
+  m_EditorClassIdentifier: 
+  Path: event:/mt-thndr
+  Guid:
+    Data1: -1384574654
+    Data2: 1295726397
+    Data3: 92396434
+    Data4: -1927627437
+  Banks:
+  - {fileID: 5349248923148030876}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 149424
 --- !u!114 &-1340223929678858137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,12 +226,15 @@ MonoBehaviour:
   - {fileID: -466696619285900353}
   - {fileID: -7080054310819568676}
   - {fileID: 5627725617187259374}
+  - {fileID: -6263893965950742839}
+  - {fileID: -6953458685892862964}
+  - {fileID: -6396708958287847490}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7045621541576598916}
   StringsBanks:
   - {fileID: -7084442874204262291}
-  cacheTime: 638520154528715564
+  cacheTime: 638539164048178830
   cacheVersion: 131618
 --- !u!114 &2895895367997551768
 MonoBehaviour:
@@ -221,10 +305,10 @@ MonoBehaviour:
   Path: ../HeadphoneGuardian/Build/Desktop/songs.bank
   Name: songs
   StudioPath: bank:/songs
-  lastModified: 638520136937578662
+  lastModified: 638539164048178830
   FileSizes:
   - Name: Desktop
-    Value: 4804032
+    Value: 8994816
   Exists: 1
 --- !u!114 &5627725617187259374
 MonoBehaviour:

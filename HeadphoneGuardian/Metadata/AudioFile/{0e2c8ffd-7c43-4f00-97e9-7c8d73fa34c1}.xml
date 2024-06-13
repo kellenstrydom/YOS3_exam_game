@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{0e2c8ffd-7c43-4f00-97e9-7c8d73fa34c1}">
+		<property name="assetPath">
+			<value>hip-hop-funk-151223.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>73.377959183673468</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e35596dc-6001-4be4-a4a0-2339ee172c02}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -12,6 +12,6 @@ public class SongObject : ScriptableObject
     public IpodInformation.Genre genre;
     public string path;
     public float songLength;
-    public Color color;
-    public ChildInformation.Stats stats;
+    //public Color color;
+    //public ChildInformation.Stats stats;
 }
