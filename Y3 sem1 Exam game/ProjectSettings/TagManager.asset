@@ -8,6 +8,7 @@ TagManager:
   - Floor
   - Shield
   - Tutorial
+  - Dialog UI
   layers:
   - Default
   - TransparentFX

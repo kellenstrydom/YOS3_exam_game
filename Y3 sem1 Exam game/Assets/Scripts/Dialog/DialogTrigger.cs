@@ -6,13 +6,13 @@ using UnityEngine;
 public class DialogTrigger : MonoBehaviour
 {
     public string[] messages;
-    private Tutorial _tutorial;
+    private DialogDisplay _tutorial;
     
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
 
-        _tutorial = GameObject.FindWithTag("Tutorial").GetComponent<Tutorial>();
+        _tutorial = GameObject.FindWithTag("Dialog UI").GetComponent<DialogDisplay>();
         
         _tutorial.LoadDialog(messages);
     }

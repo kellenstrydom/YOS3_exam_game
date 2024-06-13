@@ -39,7 +39,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        //_child = GameObject.FindWithTag("Player").GetComponent<ChildInformation>();
+        GameObject.FindWithTag("GameController").GetComponent<GameManager>()._soundManager = this;
         
         if (!staticSound.isValid())
         {
@@ -152,5 +152,13 @@ public class SoundManager : MonoBehaviour
         currentSong = FMODUnity.RuntimeManager.CreateInstance(songPath);
         currentSong.start();
     }
-    
+
+    public void StopAllSound()
+    {
+        currentSong.stop(STOP_MODE.IMMEDIATE);
+        currentSong.release();
+        staticSound.stop(STOP_MODE.IMMEDIATE);
+        staticSound.release();
+    }
+
 }

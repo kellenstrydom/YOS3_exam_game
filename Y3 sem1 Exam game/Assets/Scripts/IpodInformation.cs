@@ -98,7 +98,7 @@ public class IpodInformation : MonoBehaviour
         while (songTimer < songLength)
         {
             yield return new WaitForEndOfFrame();
-            songTimer += Time.deltaTime;
+            songTimer += Time.unscaledDeltaTime;
         }
         PlayNextSong();
     }

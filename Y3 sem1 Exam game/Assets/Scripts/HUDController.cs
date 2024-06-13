@@ -24,6 +24,7 @@ public class HUDController : MonoBehaviour
     [Header("Playlist")]
     [SerializeField] private TMP_Text currentText;
     [SerializeField] private TMP_Text runtimeText;
+    [SerializeField] private TMP_Text playlistTitle;
     [SerializeField] private TMP_Text stressStatsText;
     [SerializeField] private TMP_Text speedStatsText;
     [SerializeField] private GameObject songPlaylistPanel;
@@ -38,6 +39,9 @@ public class HUDController : MonoBehaviour
     public bool isPaused;
     [SerializeField] private GameObject pausePanel;
 
+    [Header("Win")] 
+    [SerializeField] private GameObject winPanel;
+
     private GameManager gm;
 
     private void Awake()
@@ -45,13 +49,14 @@ public class HUDController : MonoBehaviour
         gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _ipod = GameObject.FindWithTag("Player").GetComponent<IpodInformation>();
         _child = GameObject.FindWithTag("Player").GetComponent<ChildInformation>();
+        DisplayPlaylistScreen();
         
         PopulateSelect();
     }
 
     private void Start()
     {
-        DisplayPlaylistScreen();
+        
     }
 
     private void Update()
@@ -66,8 +71,8 @@ public class HUDController : MonoBehaviour
         
 
         if (isPaused) return;
-        if (Input.GetKeyDown(KeyCode.Tab) && !songPlaylistPanel.activeInHierarchy)
-            DisplayPlaylistScreen();
+        // if (Input.GetKeyDown(KeyCode.Tab) && !songPlaylistPanel.activeInHierarchy)
+        //     DisplayPlaylistScreen();
     }
 
     void DisplayPlaylistScreen()
@@ -141,6 +146,7 @@ public class HUDController : MonoBehaviour
     public void DisplayPlaylist(PlaylistObject playlist)
     {
         ChangeSpell(playlist.spellName,playlist.color);
+        playlistTitle.text = playlist.name;
         speedStatsText.text = "Speed: ";
         speedStatsText.text += playlist.stats.speedMultiplier > 1 ? $"+{(playlist.stats.speedMultiplier - 1) * 100}%" : $"{(playlist.stats.speedMultiplier - 1) * 100}%";
         stressStatsText.text = "Stress: ";
@@ -169,7 +175,18 @@ public class HUDController : MonoBehaviour
 
     public void MainMenu()
     {
-        //
+        gm.GoToMenu();
+    }
+
+    public void DisplayWinScreen()
+    {
+        winPanel.SetActive(true);
+        winPanel.GetComponent<Image>().color = Color.Lerp(Color.grey, Color.black, _child.stressLevel / 100f);
+    }
+
+    public void WinScreenButtonClick()
+    {
+        gm.GoToNextScene();
     }
 
     public void QuitGame()

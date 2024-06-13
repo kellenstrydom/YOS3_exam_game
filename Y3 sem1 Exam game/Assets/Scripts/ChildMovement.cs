@@ -15,14 +15,18 @@ public class ChildMovement : MonoBehaviour
     private ChildInformation _child;
     public Transform lookDir;
 
+    private GameManager gm;
+
     private void Start()
     {
+        gm = GameObject.FindWithTag("GameController").GetComponent<GameManager>();
         _child = gameObject.GetComponent<ChildInformation>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!gm.isAllowingInputs) return;
         Move(AutoMove() + PlayerMovement());
     }
 

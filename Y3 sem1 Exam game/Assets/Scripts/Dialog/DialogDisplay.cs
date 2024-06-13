@@ -4,12 +4,20 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Tutorial : MonoBehaviour
+public class DialogDisplay : MonoBehaviour
 {
     [SerializeField] private GameObject dialogBox;
     [SerializeField] private TMP_Text textBox;
     private int messageIndex;
     private string[] messages;
+    
+    public string[] startDialog;
+
+    private void Start()
+    {
+        if (startDialog.Length > 0)
+            LoadDialog(startDialog);
+    }
 
     private GameManager gm;
 

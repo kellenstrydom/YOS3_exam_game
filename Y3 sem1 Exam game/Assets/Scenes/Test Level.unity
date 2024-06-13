@@ -258,6 +258,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9099636}
   m_CullTransparentMesh: 1
+--- !u!1001 &136705490
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115059723488261980, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5310920593539960440, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
+      propertyPath: m_Name
+      value: Base enemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 857a4f3b9c2184a44af0cb8f17a4177d, type: 3}
 --- !u!1 &317796445
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,10 +473,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStaticPlaying: 0
-  staticStartStressValue: 20
-  staticMaxStressLevel: 80
-  musicBeginFadeStress: 40
-  musicEndFadeStress: 90
+  staticVolume: 0
+  musicVolume: 0
+  staticCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  musicCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &376533891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,10 +2754,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stressText: {fileID: 9099638}
+  stressSlider: {fileID: 0}
   currentText: {fileID: 396607287}
   runtimeText: {fileID: 1499769743}
+  playlistTitle: {fileID: 0}
+  stressStatsText: {fileID: 0}
+  speedStatsText: {fileID: 0}
   songPlaylistPanel: {fileID: 317796445}
   songSelectPrefab: {fileID: 4475485367894910326, guid: c9a94d540d5156144b020a8bf7e8a666, type: 3}
+  spellBackground: {fileID: 0}
+  spellText: {fileID: 0}
+  spellCooldown: {fileID: 0}
+  isPaused: 0
+  pausePanel: {fileID: 0}
+  winPanel: {fileID: 0}
 --- !u!1 &1889749286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,6 +2810,7 @@ MonoBehaviour:
     speedMultiplier: 0
     stressMultiplier: 0
   _hud: {fileID: 0}
+  camData: {fileID: 0}
   childMaterial: {fileID: 2100000, guid: b05d36c0746147d4bb1ab38ec9d05cf4, type: 2}
 --- !u!114 &1889749288
 MonoBehaviour:
@@ -2745,18 +2827,15 @@ MonoBehaviour:
   _childInformation: {fileID: 1889749287}
   _SoundManager: {fileID: 323026221}
   headphoneMat: {fileID: 2100000, guid: 121e41d7ded072c4c84756b4322e954d, type: 2}
-  lureStrength: 1
-  lureLifeTime: 3
-  allSongs:
-  - {fileID: 11400000, guid: 779bbb25ba5215d4e84117caf90e3356, type: 2}
-  - {fileID: 11400000, guid: c7124d95f9ae73f409e670e24fd6233c, type: 2}
-  - {fileID: 11400000, guid: f9cb8877c4d030a4b8501b31aafa5093, type: 2}
+  allPlaylists: []
+  currentPlaylist: {fileID: 0}
   songQueue:
   - {fileID: 11400000, guid: 779bbb25ba5215d4e84117caf90e3356, type: 2}
   - {fileID: 11400000, guid: c7124d95f9ae73f409e670e24fd6233c, type: 2}
   - {fileID: 11400000, guid: f9cb8877c4d030a4b8501b31aafa5093, type: 2}
   currentSong: {fileID: 0}
   songTimer: 0
+  spellSlot: {fileID: 0}
 --- !u!4 &1889749289
 Transform:
   m_ObjectHideFlags: 0
@@ -2843,6 +2922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: 1, y: 0, z: 0}
   speed: 4
+  lookDir: {fileID: 0}
 --- !u!136 &1889749295
 CapsuleCollider:
   m_ObjectHideFlags: 0
